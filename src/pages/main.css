@@ -1,0 +1,241 @@
+.hero * {
+    /* color: white; */
+}
+
+.hero {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+.hero-left {
+    width: 50%;
+    float: left;
+}
+
+
+.hero-left img {
+    height: 932px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.hero-right {
+    width: 100%;
+    float: left;
+    /* background-color: #fff; */
+    height: 932px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 99%;
+    margin-right: 0;
+    justify-content: space-around;
+}
+
+.hero-right-header img {
+    margin-left: -45px;
+}
+
+.hero-right-header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-right-header ul li {
+    margin: 0 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #696969;
+}
+
+.hero-right-header ul li.active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-right-header ul li.create-active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero-right-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 70%;
+    /* border: 1px solid white; */
+    width: 88%;
+    margin-left: 0;
+}
+
+.hero-right-body h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.hero-right-body p {
+    color: white;
+}
+
+.hero-right-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 99%;
+}
+
+.hero-right-footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 65px;
+    color: #696969;
+}
+
+.hero-right-footer li {
+    margin: 0 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+
+/* CreatePage */
+
+.hrr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.hrr hr {
+    width: 225px;
+    margin: 0;
+    padding: 0;
+    color: #414141;
+    border-color: #414141;
+}
+
+
+/* Account */
+
+.account {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.account-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 99%;
+    margin-right: 0;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+.account-header img {
+    margin-left: -45px;
+}
+
+.account-header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account-header ul li {
+    margin: 0 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #696969;
+}
+
+.account-header ul li.active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.account-header ul li.create-active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.account-header ul li.account-active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.account-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    /* border: 1px solid white; */
+    width: 99%;
+    margin-right: 0;
+    margin-top: 50px;
+    color: white;
+}
+
+.uses {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 50%;
+    margin-right: 0;
+    margin-top: 90px;
+    justify-content: space-around;
+}

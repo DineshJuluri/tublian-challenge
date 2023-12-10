@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Space Grotesk';
+}
+
+:root {
+    --base100-dark: rgba(41, 41, 41, 1);
+    --base300-dark: rgba(105, 105, 105, 1);
+    --base500-dark-secondary: rgba(136, 136, 136, 1);
+    --base700-dark-tertiary: rgba(183, 183, 183, 1);
+    --base800-dark: rgba(207, 207, 207, 1);
+    --base900-dark: rgba(254, 254, 254, 1);
+    --base900-light: rgba(18, 18, 18, 1);
+    --primarygold-100: rgba(254, 239, 195, 1);
+    --primarygold-200: rgba(254, 227, 139, 1);
+    --primarygold-300: rgba(253, 214, 73, 1);
+    --text-4xl-font-bold-font-family: "SpaceGrotesk-Bold", Helvetica;
+    --text-4xl-font-bold-font-size: 36px;
+    --text-4xl-font-bold-font-style: normal;
+    --text-4xl-font-bold-font-weight: 700;
+    --text-4xl-font-bold-letter-spacing: 0px;
+    --text-4xl-font-bold-line-height: 52px;
+    --text-base-font-bold-font-family: "SpaceGrotesk-Bold", Helvetica;
+    --text-base-font-bold-font-size: 16px;
+    --text-base-font-bold-font-style: normal;
+    --text-base-font-bold-font-weight: 700;
+    --text-base-font-bold-letter-spacing: 0px;
+    --text-base-font-bold-line-height: 24px;
+    --text-base-font-medium-font-family: "SpaceGrotesk-Medium", Helvetica;
+    --text-base-font-medium-font-size: 16px;
+    --text-base-font-medium-font-style: normal;
+    --text-base-font-medium-font-weight: 500;
+    --text-base-font-medium-letter-spacing: 0px;
+    --text-base-font-medium-line-height: 24px;
+    --text-base-font-regular-font-family: "SpaceGrotesk-Regular", Helvetica;
+    --text-base-font-regular-font-size: 16px;
+    --text-base-font-regular-font-style: normal;
+    --text-base-font-regular-font-weight: 400;
+    --text-base-font-regular-letter-spacing: 0px;
+    --text-base-font-regular-line-height: 24px;
+    --text-sm-font-medium-font-family: "SpaceGrotesk-Medium", Helvetica;
+    --text-sm-font-medium-font-size: 14px;
+    --text-sm-font-medium-font-style: normal;
+    --text-sm-font-medium-font-weight: 500;
+    --text-sm-font-medium-letter-spacing: 0px;
+    --text-sm-font-medium-line-height: 20px;
+}
