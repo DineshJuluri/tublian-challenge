@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './Input.css';
 import { PiWarningCircleBold, PiCheckCircleBold } from "react-icons/pi";
 
-const Input = (props) => {
+const EmailInput = (props) => {
     const [isValid, setIsValid] = useState(true);
     const [showError, setShowError] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (e) => {
         const value = e.target.value.trim();
-        const pattern = /^[A-Za-z\s]+$/;
+        const pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
 
         setInputValue(value);
 
@@ -29,7 +29,7 @@ const Input = (props) => {
     let hintMessage = null;
     let hintColor = null;
     if (showError) {
-        hintMessage = 'Please enter only letters';
+        hintMessage = 'Please enter a valid email address';
         hintColor = 'red';
     } else if (inputValue !== '') {
         hintMessage = '';
@@ -53,4 +53,4 @@ const Input = (props) => {
     );
 };
 
-export default Input;
+export default EmailInput;

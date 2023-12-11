@@ -2,8 +2,13 @@ import React from 'react'
 import './Button.css'
 
 const Button = (props) => {
+    const handleClick = () => {
+        if (props.onClick) {
+          props.onClick();
+        }
+      };
     return (
-            <button className="button">{props.name}</button>
+            <button onClick={handleClick} className="button">{props.name}</button>
     )
 }
 
