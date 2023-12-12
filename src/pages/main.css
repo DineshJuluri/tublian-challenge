@@ -216,6 +216,12 @@
     -webkit-text-fill-color: transparent;
 }
 
+.account-header ul li.payment-active {
+    background: -webkit-linear-gradient(0deg, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .account-body {
     display: flex;
     flex-direction: column;
@@ -238,4 +244,112 @@
     margin-right: 0;
     margin-top: 90px;
     justify-content: space-around;
+}
+
+.account-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 99%;
+    margin-right: 0;
+    margin-top: 50px;
+    color: white;
+    justify-content: space-around;
+}
+
+.account-footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account-footer li {
+    margin: 0 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: #414141;
+}
+
+
+/* Payment */
+
+.payment {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.payment-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    /* border: 1px solid white; */
+    width: 99%;
+    margin-right: 0;
+    margin-top: 50px;
+    color: white;
+}
+
+.payment-body h1 {
+    margin-top: 10px;
+    margin-bottom: -4px;
+}
+
+.check-button {
+    margin-top: 30px;
+}
+
+.payment-plans {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    /* border: 1px solid white; */
+    width: 50%;
+    margin-right: 0;
+    margin-top: 90px;
+    justify-content: space-around;
+}
+
+.payment-card {
+    width: 290px;
+    height: 390px;
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #515151;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.payment-card .active {
+    .payment-card.active {
+        width: 290px;
+        height: 390px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        /* Set the gradient for the border */
+        background: linear-gradient(to right, #FBDA61, #FF5ACD);
+        /* Clip the background to the border-box */
+        background-clip: padding-box, border-box;
+        /* Ensure the border doesn't overlap the gradient */
+        border: 1px solid transparent;
+    }
 }

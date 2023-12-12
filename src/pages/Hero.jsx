@@ -24,7 +24,7 @@ const Hero = () => {
         navigate('/create', { state: { firstName, lastName } });
     };
   return (
-    <div className='hero'>~
+    <div className='hero'>
         <div className="hero-left">
             <img src={hero} alt="Hero" />
         </div>

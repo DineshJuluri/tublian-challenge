@@ -5,11 +5,12 @@ import herologo from '../assets/herologo.png'
 import Button from '../components/buttons/Default/Button'
 import PasswordInput from '../components/inputs/PasswordInput/PasswordInput'
 import GButton from '../components/buttons/GoogleBtn/GButton'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import EmailInput from '../components/inputs/Input/EmailInput'
 
 const CreatePage = (props) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const { firstName, lastName } = location.state || {};
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,6 +18,7 @@ const CreatePage = (props) => {
     const handleEmailChange = (value) => {
         setEmail(value);
     };
+   
 
     const handlePasswordChange = (value) => {
         setPassword(value);
@@ -25,8 +27,9 @@ const CreatePage = (props) => {
         navigate('/account-setup');
     };
     const values = () => {
-        console.log({ email, password });
+        console.log({ firstName, lastName });
     };
+    values()
     const isButtonDisabled = email.trim() === '' || password.trim() === '';
     return (
         <div className='hero'>
