@@ -48,7 +48,7 @@ const CreatePage = (props) => {
                 </div>
                 <div className="hero-right-body">
                     <h1>Create Account</h1>
-                    <p>Creating account for <span style={{ color: '#4BA3FF' }}>@{firstName + lastName}</span></p>
+                    <p>Creating account for <span className='name' style={{ color: '#4BA3FF' ,backgroundColor:'transparent' ,fontSize:"16px" }}>@{firstName + lastName}</span></p>
                     <br />
                     <br />
                     <EmailInput name="Email" valid="Provide a valid email" onChange={handleEmailChange} />
