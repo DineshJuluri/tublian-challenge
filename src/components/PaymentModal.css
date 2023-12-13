@@ -1,0 +1,231 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    /* Semi-transparent background */
+    z-index: 1000;
+    overflow: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+    display: block;
+}
+
+.modal {
+    width: 450px;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #292929;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+}
+
+.modal .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal .payment-plan {
+    background-color: #414141;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 15%;
+}
+
+.modal .payment-plan .plan-details {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: -15px;
+    height: 40%;
+    width: 93%;
+}
+
+.modal .payment-plan hr {
+    margin-top: 0;
+    width: 99%;
+}
+
+.modal .payment-plan .plan-details h6 {
+    color: #FDD649;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    text-align: center;
+    word-wrap: break-word;
+    cursor: pointer;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.modal .payment-plan .plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.modal .payment-plan .plan .title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: -20px;
+    width: 100%;
+
+}
+
+.payment-span-pro {
+    margin-top: 20px;
+    font-size: 10px;
+    color: white;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    text-align: center;
+    word-wrap: break-word;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 1px solid white;
+    background: linear-gradient(#855FEF, #5435AA);
+}
+
+.modal .payment-plan .plan .price {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+}
+
+.modal .payment-plan .plan .price div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 160;
+
+}
+
+
+span.currency {
+    font-size: 10px;
+    margin-right: -19px;
+}
+
+span.planprice {
+    font-size: 19px;
+    margin-right: -19px;
+    color: white;
+}
+
+span.duration {
+    font-size: 14px;
+    margin-right: -17px;
+
+}
+
+
+.payment-info {
+    /* background-color: #414141; */
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 80%;
+    width: 100%;
+}
+
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* justify-content: space-between; */
+    /* height: 100%; */
+    width: 100%;
+}
+
+.payment-info h3 {
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.payment-info .payment-method p {
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.payment-method {
+    width: 100%;
+
+}
+
+.expiry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.payment-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+    border: 2px solid #414141;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background: linear-gradient(#FBDA61, #FF5ACD);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}

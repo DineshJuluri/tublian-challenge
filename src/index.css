@@ -6,6 +6,12 @@ body {
     font-family: 'Space Grotesk';
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 :root {
     --base100-dark: rgba(41, 41, 41, 1);
     --base300-dark: rgba(105, 105, 105, 1);

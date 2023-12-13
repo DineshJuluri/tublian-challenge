@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+// import './Input.css';
 import { PiWarningCircleBold, PiCheckCircleBold } from "react-icons/pi";
 
-const EmailInput = (props) => {
+const Input = (props) => {
     const inputStyles = {
         Input: {
             width : props.width || '30rem',
@@ -44,33 +45,34 @@ const EmailInput = (props) => {
             marginTop: '3px',
         },
     };
+    
     const [isValid, setIsValid] = useState(true);
     const [showError, setShowError] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (e) => {
         const value = e.target.value.trim();
-        const pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+
+        // Remove non-numeric characters and check if the remaining length is 16
+        const numericValue = value.replace(/\D/g, '');
+        const isValidInput = numericValue.length === 16 || numericValue === '';
 
         setInputValue(value);
 
-        if (value === '') {
+        if (isValidInput) {
             setIsValid(true);
             setShowError(false);
-        } else if (!pattern.test(value)) {
+            props.onChange(numericValue); // Send only numeric value to parent
+        } else {
             setIsValid(false);
             setShowError(true);
-        } else {
-            setIsValid(true);
-            setShowError(false);
         }
-        props.onChange(value);
     };
 
     let hintMessage = null;
     let hintColor = null;
     if (showError) {
-        hintMessage = 'Please enter a valid email address';
+        hintMessage = 'Enter a valid Card Number';
         hintColor = 'red';
     } else if (inputValue !== '') {
         hintMessage = '';
@@ -78,14 +80,14 @@ const EmailInput = (props) => {
     }
 
     return (
-        <div className='InputContainer'>
-            <div className='Input'  style={inputStyles.Input}>
+        <div>
+            <div className='Input' style={inputStyles.Input}>
                 <input
-                    type='text'
+                    type={props.type}
                     placeholder={props.name}
                     value={inputValue}
-                    style={inputStyles.input}
                     onChange={handleInputChange}
+                    style={inputStyles.input}
                 />
                 {inputValue && !isValid && <PiWarningCircleBold size={30} color='#F26663' />}
                 {inputValue && isValid && <PiCheckCircleBold size={30} color='#76F368' />}
@@ -95,4 +97,4 @@ const EmailInput = (props) => {
     );
 };
 
-export default EmailInput;
+export default Input;

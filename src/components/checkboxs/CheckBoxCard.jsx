@@ -16,8 +16,10 @@ const CheckBoxCard = (props) => {
                 {isActive && <img src={tick} alt="" height={15} />}
             </div>
             <img className='team' src={props.img} height={110} alt="" />
-            <h1 className="title">{props.title}</h1>
-            <p className="description">{props.desc}</p>
+            <div className="test">
+                <h1 className="title">{props.title}</h1>
+                <p className="description">{props.desc}</p>
+            </div>
         </div>
     );
 };

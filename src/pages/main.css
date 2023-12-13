@@ -153,6 +153,11 @@
     border-color: #414141;
 }
 
+.hrr span {
+    background-color: transparent;
+    color: white;
+}
+
 
 /* Account */
 

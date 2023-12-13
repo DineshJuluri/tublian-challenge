@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './main.css'
 import createaccount from '../assets/createaccount.png'
 import herologo from '../assets/herologo.png'
@@ -14,7 +14,7 @@ const CreatePage = (props) => {
     const { firstName, lastName } = location.state || {};
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const handleEmailChange = (value) => {
         setEmail(value);
     };
@@ -29,8 +29,19 @@ const CreatePage = (props) => {
     const values = () => {
         console.log({ firstName, lastName });
     };
+    
     values()
     const isButtonDisabled = email.trim() === '' || password.trim() === '';
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    const isDesktop = windowWidth < 1220;
     return (
         <div className='hero'>
             <div className="hero-left">
@@ -50,18 +61,15 @@ const CreatePage = (props) => {
                     <h1>Create Account</h1>
                     <p>Creating account for <span className='name' style={{ color: '#4BA3FF' ,backgroundColor:'transparent' ,fontSize:"16px" }}>@{firstName + lastName}</span></p>
                     <br />
+                    <EmailInput width={isDesktop? "20rem" :"30rem"} fontsize={isDesktop?"16px" : ""} name="Email" valid="Provide a valid email" onChange={handleEmailChange} />
                     <br />
-                    <EmailInput name="Email" valid="Provide a valid email" onChange={handleEmailChange} />
+                    <PasswordInput width={isDesktop? "20rem" :"30rem"} fontsize={isDesktop?"16px" : ""} onChange={handlePasswordChange} />
                     <br />
-                    <br />
-                    <PasswordInput onChange={handlePasswordChange} />
-                    <br />
-                    <br />
-                    <Button name="Create Account" onClick={handleCreateAccount} disabled={isButtonDisabled} />
+                    <Button width={isDesktop? "20rem" :"30rem"} fontsize={isDesktop?"16px" : ""} name="Create Account" onClick={handleCreateAccount} disabled={isButtonDisabled} />
                     <div className="hrr">
                         <hr />&nbsp;<span>Or</span>&nbsp;<hr />
                     </div>
-                    <GButton name="Sign up with Google" />
+                    <GButton width={isDesktop? "20rem" :"30rem"} fontsize={isDesktop?"16px" : ""} name="Sign up with Google" />
                     <p style={{ color: '#696969' }}>Already have an account&nbsp;? &nbsp;<a style={{ color: 'white', textDecoration: 'underline', cursor: 'pointer' }} href="#">Login</a></p>
                 </div>
                 <div className="hero-right-footer">

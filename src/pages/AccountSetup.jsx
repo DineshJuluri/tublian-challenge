@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import herologo from '../assets/herologo.png'
 import CheckBoxCard from '../components/checkboxs/CheckBoxCard'
 import img2 from '../assets/img2.png'
@@ -8,9 +8,20 @@ import Button from '../components/buttons/Default/Button'
 import { useNavigate } from 'react-router-dom'
 const AccountSetup = () => {
     const navigate = useNavigate();
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const handleNextClick = () => {
         navigate('/payment');
     };
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    const isDesktop = windowWidth < 1220;
   return (
     <div className='account'>
         <div className="account-header">
@@ -33,10 +44,7 @@ const AccountSetup = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-
-            <Button name="Next"  onClick={handleNextClick} />
+            <Button width={isDesktop? "20rem" :"30rem"} fontsize={isDesktop?"16px" : ""} name="Next"  onClick={handleNextClick} />
         </div>
         <div className="account-footer">
                 <ul>

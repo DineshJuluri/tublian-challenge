@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import herologo from '../assets/herologo.png'
 import CheckButton from '../components/buttons/CheckButton/CheckButton'
 import PaymentModal from '../components/PaymentModal';
@@ -9,6 +9,7 @@ import SuccessModal from '../components/SuccessModal';
 const Payment = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -20,6 +21,16 @@ const Payment = () => {
             setShowSuccessModal(true);
         }
     };
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    const isDesktop = windowWidth < 1220;
     return (
         <div className='payment'>
             <div className="account-header">
@@ -52,7 +63,7 @@ const Payment = () => {
                                 <li><div><img src={greentick} alt="" /><span>Priority support.</span></div></li>
                             </ul>
                         </div>
-                        <div className="but"><Button name="Subscribe" onClick={openModal} width="300px" /></div>
+                        <div className="but"><Button width={isDesktop? "18rem" :"30rem"} fontsize={isDesktop?"16px" : ""}  name="Subscribe" onClick={openModal} width="300px" /></div>
                     </div>
                     <div className="payment-card active bussiness">
                         <span className="payment-span bussiness">Bussiness Plan</span>
@@ -69,7 +80,7 @@ const Payment = () => {
                                 <li><div><img src={greentick} alt="" /><span>Early access to new features and updates.</span></div></li>
                             </ul>
                         </div>
-                        <div className="but"><Button name="Subscribe" onClick={openModal} width="300px" /></div>
+                        <div className="but"><Button width={isDesktop? "18rem" :"30rem"} fontsize={isDesktop?"16px" : ""}  name="Subscribe" onClick={openModal} width="300px" /></div>
                     </div>
                     <div className="payment-card enterprise">
                         <span className="payment-span enterprise">Enterprise Plan</span>
@@ -85,7 +96,7 @@ const Payment = () => {
                                 <li><div><img src={greentick} alt="" /><span>Priority support with 24/7 availability.</span></div></li>
                             </ul>
                         </div>
-                        <div className="but"><Button name="Contact Us" onClick={openModal} width="300px" color="#FBDA61" /></div>
+                        <div className="but"><Button width={isDesktop? "270px" :"30rem"} fontsize={isDesktop?"16px" : ""}  name="Contact Us" onClick={openModal} width="300px" color="#FBDA61" /></div>
                     </div>
                 </div >
                 <PaymentModal isOpen={isModalOpen} onClose={closeModal} />
